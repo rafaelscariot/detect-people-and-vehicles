@@ -2,7 +2,7 @@
 
 This project performs real-time identification of vehicles and people with a high accuracy rate.
 
-<img src="https://github.com/rafaelscariot/detect-vehicles-and-people/blob/master/src/resources/result.png"/>
+<img src="https://github.com/rafaelscariot/detect-people-and-vehicles/blob/master/src/resources/result.png"/>
 
 ## Installation
 
