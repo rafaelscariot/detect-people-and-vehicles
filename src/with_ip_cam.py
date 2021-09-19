@@ -2,6 +2,8 @@ import cv2
 import numpy as np
 import urllib.request
 
+IP_CAMERA_ADDRESS = 'http://192.168.0.109:5000/stream'
+
 file_size = (1920, 1080)
 
 RESIZED_DIMENSIONS = (300, 300)
@@ -26,24 +28,26 @@ bbox_colors = np.random.uniform(255, 0, size=(len(categories), 3))
 
 
 def main():
-    stream = urllib.request.urlopen('ip_cam')
+    stream = urllib.request.urlopen(IP_CAMERA_ADDRESS)
     total_bytes = b''
 
     while True:
         total_bytes += stream.read(1024)
         b = total_bytes.find(b'\xff\xd9')
+        print(b)
         if not b == -1:
             a = total_bytes.find(b'\xff\xd8')
             jpg = total_bytes[a:b+2]
-            total_bytes= total_bytes[b+2:]
-            
+            total_bytes = total_bytes[b+2:]
+
             # decode to colored image ( another option is cv2.IMREAD_GRAYSCALE )
-            frame = cv2.imdecode(np.fromstring(jpg, dtype=np.uint8), cv2.IMREAD_COLOR) 
+            frame = cv2.imdecode(np.fromstring(
+                jpg, dtype=np.uint8), cv2.IMREAD_COLOR)
 
             (h, w) = frame.shape[:2]
 
             frame_blob = cv2.dnn.blobFromImage(cv2.resize(frame, RESIZED_DIMENSIONS),
-                                            IMG_NORM_RATIO, RESIZED_DIMENSIONS, 127.5)
+                                               IMG_NORM_RATIO, RESIZED_DIMENSIONS, 127.5)
 
             neural_network.setInput(frame_blob)
 
