@@ -1,4 +1,4 @@
-# Detection of Vehicles and People
+<h1 style="text-align: center;">Detection of Vehicles and People</h1>
 
 This project performs real-time identification of vehicles and people with a high accuracy rate using a Convolutional Neural Network.
 
