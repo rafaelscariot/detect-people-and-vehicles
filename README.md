@@ -13,9 +13,13 @@ pip install requirements.txt
 ```
 
 ## Usage
-
+To use a directory file or a webcam connected to the computer, use:
 ```python
-python app.py
+python webcam_or_file.py
+```
+To use an IP camera that is running on http protocol on your local network, use:
+```python
+with_ip_cam.py
 ```
 
 ## Contributing
