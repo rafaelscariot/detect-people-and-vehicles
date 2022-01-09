@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-filename = 'video.mp4'
+filename = 'resources/video.mp4'
 file_size = (1920, 1080)
 
 output_filename = 'result.mp4'
@@ -75,7 +75,7 @@ def main():
                     y = startY - 15 if startY - 15 > 15 else startY + 15
 
                     cv2.putText(frame, label, (startX, y), cv2.FONT_HERSHEY_SIMPLEX,
-                                0.5, bbox_colors[idx], 2)
+                                1, bbox_colors[idx], 2)
 
         frame = cv2.resize(
             frame, file_size, interpolation=cv2.INTER_NEAREST)
