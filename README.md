@@ -3,7 +3,7 @@
 
 This project performs real-time identification of vehicles and people with a high accuracy rate using a Convolutional Neural Network.
 
-<img src="https://github.com/rafaelscariot/detect-people-and-vehicles/blob/master/src/resources/result.png"/>
+![screen-gif](https://github.com/rafaelscariot/detect-people-and-vehicles/blob/master/src/resources/result.gif)
 
 ## Installation
 
